@@ -14,6 +14,8 @@
 		5130083B274B6C65009D9DEC /* FlowerStore_4U.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51300839274B6C65009D9DEC /* FlowerStore_4U.xcdatamodeld */; };
 		5130083D274B6C67009D9DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5130083C274B6C67009D9DEC /* Assets.xcassets */; };
 		51300840274B6C67009D9DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5130083E274B6C67009D9DEC /* LaunchScreen.storyboard */; };
+		51300848274B91BD009D9DEC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51300847274B91BD009D9DEC /* Model.swift */; };
+		5130084C274BB919009D9DEC /* ProuductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130084B274BB919009D9DEC /* ProuductsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		5130083C274B6C67009D9DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5130083F274B6C67009D9DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51300841274B6C67009D9DEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51300847274B91BD009D9DEC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		5130084B274BB919009D9DEC /* ProuductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProuductsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				51300830274B6C65009D9DEC /* AppDelegate.swift */,
 				51300832274B6C65009D9DEC /* SceneDelegate.swift */,
 				51300834274B6C65009D9DEC /* ViewController.swift */,
+				5130084B274BB919009D9DEC /* ProuductsCell.swift */,
+				51300847274B91BD009D9DEC /* Model.swift */,
 				51300836274B6C65009D9DEC /* Main.storyboard */,
 				5130083C274B6C67009D9DEC /* Assets.xcassets */,
 				5130083E274B6C67009D9DEC /* LaunchScreen.storyboard */,
@@ -141,8 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51300848274B91BD009D9DEC /* Model.swift in Sources */,
 				51300835274B6C65009D9DEC /* ViewController.swift in Sources */,
 				51300831274B6C65009D9DEC /* AppDelegate.swift in Sources */,
+				5130084C274BB919009D9DEC /* ProuductsCell.swift in Sources */,
 				51300833274B6C65009D9DEC /* SceneDelegate.swift in Sources */,
 				5130083B274B6C65009D9DEC /* FlowerStore_4U.xcdatamodeld in Sources */,
 			);
@@ -295,7 +303,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlowerStore_4U/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = 4U;
+				INFOPLIST_KEY_CFBundleDisplayName = "For You";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -323,7 +331,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlowerStore_4U/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = 4U;
+				INFOPLIST_KEY_CFBundleDisplayName = "For You";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
