@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FlowerStore_4U" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,27 +18,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5kx-cU-Olg">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5kx-cU-Olg">
                                 <rect key="frame" x="0.0" y="40" width="414" height="188"/>
-                                <color key="backgroundColor" red="0.73807007074356079" green="0.78746062517166138" blue="0.8404356837272644" alpha="0.9989013672" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="188" id="oPC-8G-h1A"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pt8-6b-WkV">
-                                    <size key="itemSize" width="398" height="131"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pt8-6b-WkV">
+                                    <size key="itemSize" width="416" height="159"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="epy-mA-IB8">
-                                        <rect key="frame" x="8" y="0.0" width="398" height="131"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BannerID" id="epy-mA-IB8" customClass="PhotoBannerCell" customModule="FlowerStore_4U" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="14.5" width="416" height="159"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fvz-Wb-M1P">
-                                            <rect key="frame" x="0.0" y="0.0" width="398" height="131"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="416" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0wz-Fe-Efr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="416" height="159"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="159" id="TYi-VW-ON0"/>
+                                                        <constraint firstAttribute="width" constant="416" id="wZo-P4-Olk"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0wz-Fe-Efr" firstAttribute="top" secondItem="fvz-Wb-M1P" secondAttribute="top" id="FcB-QK-Wxd"/>
+                                                <constraint firstItem="0wz-Fe-Efr" firstAttribute="leading" secondItem="fvz-Wb-M1P" secondAttribute="leading" id="Upd-7N-vkB"/>
+                                                <constraint firstAttribute="trailing" secondItem="0wz-Fe-Efr" secondAttribute="trailing" id="a2V-d9-suK"/>
+                                                <constraint firstAttribute="bottom" secondItem="0wz-Fe-Efr" secondAttribute="bottom" id="sdZ-Yk-5KA"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="398" height="131"/>
+                                        <size key="customSize" width="416" height="159"/>
+                                        <connections>
+                                            <outlet property="PhotoOffers" destination="0wz-Fe-Efr" id="rJj-fk-3hg"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -129,7 +147,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XPP-ZO-hcD" kind="show" id="bdA-ac-Q5a"/>
+                                    <segue destination="XPP-ZO-hcD" kind="show" id="vJa-n3-ORe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -152,8 +170,10 @@
                             <constraint firstItem="R3e-MF-YJw" firstAttribute="top" secondItem="Uxg-zV-ZfE" secondAttribute="bottom" constant="2" id="zQp-7h-Ovj"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="VSr-CO-wxf"/>
                     <navigationItem key="navigationItem" id="j61-sE-hyL"/>
                     <connections>
+                        <outlet property="BannerCollectionView" destination="5kx-cU-Olg" id="4P9-K9-NWC"/>
                         <outlet property="itemsCollectionView" destination="R3e-MF-YJw" id="KZa-Nz-nzY"/>
                     </connections>
                 </viewController>
@@ -244,23 +264,23 @@
             <objects>
                 <viewController id="XPP-ZO-hcD" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c4G-5B-fKO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNx-JE-rOn">
-                                <rect key="frame" x="20" y="439" width="256" height="130"/>
+                                <rect key="frame" x="20" y="385" width="256" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="wz3-gk-zku"/>
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="upload photo (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8P-Nv-Tua">
-                                <rect key="frame" x="20" y="108" width="374" height="27.5"/>
+                                <rect key="frame" x="20" y="20" width="374" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ftt-sK-MO8">
-                                <rect key="frame" x="70" y="171" width="274" height="182.5"/>
+                                <rect key="frame" x="70" y="83" width="274" height="216.5"/>
                                 <color key="backgroundColor" red="0.99806779623031616" green="0.96004766225814819" blue="0.92952513694763184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -268,16 +288,16 @@
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a flower" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mN1-P4-aVH">
-                                <rect key="frame" x="20" y="391.5" width="374" height="27.5"/>
+                                <rect key="frame" x="20" y="337.5" width="374" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="qcl-td-byu">
-                                <rect key="frame" x="300" y="488" width="94" height="32"/>
+                                <rect key="frame" x="300" y="434" width="94" height="32"/>
                             </stepper>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fAc-Qb-Kad">
-                                <rect key="frame" x="20" y="610" width="374" height="50"/>
+                                <rect key="frame" x="20" y="605" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="QFk-aw-5yS"/>
                                 </constraints>
@@ -300,7 +320,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqy-Pr-bUw">
-                                <rect key="frame" x="334" y="459" width="60" height="26"/>
+                                <rect key="frame" x="334" y="405" width="60" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Tjz-00-6v8"/>
                                 </constraints>
@@ -409,13 +429,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="fxi-NB-RTw" kind="relationship" relationship="viewControllers" id="uhV-lX-1yS"/>
                         <segue destination="ztb-Hc-s3O" kind="relationship" relationship="viewControllers" id="5Pg-4m-n6V"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Hgg-Bb-e2S"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNX-5o-svY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-919" y="-481"/>
+            <point key="canvasLocation" x="-197" y="-751"/>
         </scene>
         <!--Item-->
         <scene sceneID="d1V-HD-zgo">
@@ -447,13 +467,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4rJ-mO-60r"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSJ-c2-l7I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="613" y="-893"/>
+            <point key="canvasLocation" x="612" y="-1515"/>
         </scene>
     </scenes>
     <resources>
