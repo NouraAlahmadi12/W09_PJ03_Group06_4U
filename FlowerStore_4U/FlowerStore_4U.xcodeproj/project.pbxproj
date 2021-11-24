@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22FA650F274E25B100A6DE42 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FA650E274E25B100A6DE42 /* DetailsViewController.swift */; };
 		51300831274B6C65009D9DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51300830274B6C65009D9DEC /* AppDelegate.swift */; };
 		51300833274B6C65009D9DEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51300832274B6C65009D9DEC /* SceneDelegate.swift */; };
 		51300835274B6C65009D9DEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51300834274B6C65009D9DEC /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22FA650E274E25B100A6DE42 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		5130082D274B6C65009D9DEC /* FlowerStore_4U.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerStore_4U.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51300830274B6C65009D9DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51300832274B6C65009D9DEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				5130084B274BB919009D9DEC /* ProuductsCell.swift */,
 				51300847274B91BD009D9DEC /* Model.swift */,
 				51300836274B6C65009D9DEC /* Main.storyboard */,
+				22FA650E274E25B100A6DE42 /* DetailsViewController.swift */,
 				A52337EB274D6D2300703312 /* PhotoBannerCell.swift */,
 				5130083C274B6C67009D9DEC /* Assets.xcassets */,
 				5130083E274B6C67009D9DEC /* LaunchScreen.storyboard */,
@@ -153,6 +156,7 @@
 				51300848274B91BD009D9DEC /* Model.swift in Sources */,
 				51300835274B6C65009D9DEC /* ViewController.swift in Sources */,
 				51300831274B6C65009D9DEC /* AppDelegate.swift in Sources */,
+				22FA650F274E25B100A6DE42 /* DetailsViewController.swift in Sources */,
 				5130084C274BB919009D9DEC /* ProuductsCell.swift in Sources */,
 				51300833274B6C65009D9DEC /* SceneDelegate.swift in Sources */,
 				A52337EC274D6D2300703312 /* PhotoBannerCell.swift in Sources */,
