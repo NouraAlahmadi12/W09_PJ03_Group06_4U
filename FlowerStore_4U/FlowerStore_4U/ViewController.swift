@@ -66,20 +66,26 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         bannerCollectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        vc.image = items.flowerList[indexPath.row].flowerImage
+        vc.Details = items.flowerList[indexPath.row].flowerDetails ?? "No Details"
+        vc.priceDetails = String(items.flowerList[indexPath.row].flowerPrice)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         items.addItem(newItem: FlowersInfo(flowerName: "Orang Bouqeut", flowerDetails: "Orange Flowers with Flowers Height 100 CM Width 50 CM", flowerImage: UIImage(named: "OrangeFlower")!, flowerPrice: 121))
         
-        items.addItem(newItem: FlowersInfo(flowerName: "Blue Bouqeut", flowerDetails: "Blue Flowers Height 86 CM Width 24 CM", flowerImage: UIImage(named: "BlueFlower")!, flowerPrice: 256))
+        items.addItem(newItem: FlowersInfo(flowerName: "Blue Bouqeut", flowerDetails: "Blue Flowers Height 86 CM Width 24 CM", flowerImage: UIImage(named: "BlueFlower")!, flowerPrice: 96))
         
         items.addItem(newItem: FlowersInfo(flowerName: "Pink Bouqeut", flowerDetails: "Pink Flowers Height 57 CM Width 60 CM", flowerImage: UIImage(named: "PinkFlower")!, flowerPrice: 162.50))
         
         items.addItem(newItem: FlowersInfo(flowerName: "Red Bouqeut", flowerDetails: "Red , black and white Flowers with Height 76 CM Width 47 CM", flowerImage: UIImage(named: "RedFlower")!, flowerPrice: 97.92))
         
-        items.addItem(newItem: FlowersInfo(flowerName: "White Bouqeut", flowerDetails: "white Flowers Height 72 CM Width 60 CM", flowerImage: UIImage(named: "WhiteFlower")!, flowerPrice: 90.92))
+        items.addItem(newItem: FlowersInfo(flowerName: "White Bouqeut", flowerDetails: "white Flowers Height 72 CM Width 60 CM", flowerImage: UIImage(named: "WhiteFlower")!, flowerPrice: 236.92))
         
         
         items.addItem(newItem: FlowersInfo(flowerName: "sun Bouqeut", flowerDetails: "sun Flowers Height 60 CM Width 15 CM", flowerImage: UIImage(named: "sunFlower")!, flowerPrice: 100))
@@ -90,7 +96,7 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         bannerCollectionView.dataSource = self
         bannerCollectionView.delegate = self
     
-        startTimer()
+//        startTimer()
     
     }
 }
