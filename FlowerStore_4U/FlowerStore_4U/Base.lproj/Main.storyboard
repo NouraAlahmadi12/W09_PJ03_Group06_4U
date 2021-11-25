@@ -281,9 +281,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="qcl-td-byu">
-                                <rect key="frame" x="300" y="488" width="94" height="32"/>
+                                <rect key="frame" x="300" y="510" width="94" height="32"/>
                                 <connections>
-                                    <action selector="StepperBottun:" destination="XPP-ZO-hcD" eventType="valueChanged" id="nt7-eE-Vbv"/>
+                                    <action selector="stepperBottun:" destination="XPP-ZO-hcD" eventType="valueChanged" id="pi1-bC-q8m"/>
                                 </connections>
                             </stepper>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fAc-Qb-Kad">
@@ -397,10 +397,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZTq-By-U55"/>
                     <connections>
-                        <outlet property="PriceCostumLBL" destination="j0p-76-kgt" id="vC3-qX-NXF"/>
-                        <outlet property="SrepperAmount" destination="Lqy-Pr-bUw" id="kXR-eN-WWa"/>
+                        <outlet property="amountLBL" destination="Lqy-Pr-bUw" id="OAY-aa-C3a"/>
                         <outlet property="chooseRose" destination="bNx-JE-rOn" id="0Md-ca-R3w"/>
                         <outlet property="imageFromCL" destination="LUR-L1-baN" id="ISh-sr-U88"/>
+                        <outlet property="priceCostomLBL" destination="j0p-76-kgt" id="tEc-kw-K7A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8AS-QO-mc1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
