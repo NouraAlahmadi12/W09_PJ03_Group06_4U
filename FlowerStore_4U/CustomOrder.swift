@@ -8,19 +8,19 @@
 import UIKit
 
 class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource{
-    
-    let roes = ["jouri roses - Red" , "jouri roses - White" , "jouri roses - Yellow"]
+//    var custom = FlowersList()
+    let rose = ["jouri roses - Red" , "jouri roses - White" , "jouri roses - Yellow"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return roes.count
+        return rose.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return roes[row]
+        return rose[row]
     }
     
 
@@ -33,6 +33,18 @@ class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSou
         chooseRose.delegate = self
         // Do any additional setup after loading the view.
     }
+    
+    @IBOutlet weak var PriceCostumLBL: UILabel!
+    @IBOutlet weak var SrepperAmount: UILabel!
+    
+    @IBAction func StepperBottun(_ sender: UIStepper) {
+        SrepperAmount.text = String(sender.value)
+        PriceCostumLBL.text = String((sender.value)*5)
+    }
+    
+    
+    
+    
     
     
 
@@ -48,9 +60,4 @@ class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSou
 
 }
 
-//extension UIViewController : UIPickerViewDelegate{
-//
-//
-//
-//}
 

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5kx-cU-Olg">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5kx-cU-Olg">
                                 <rect key="frame" x="0.0" y="40" width="414" height="188"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -294,8 +294,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="qcl-td-byu">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="qcl-td-byu">
                                 <rect key="frame" x="300" y="488" width="94" height="32"/>
+                                <connections>
+                                    <action selector="StepperBottun:" destination="XPP-ZO-hcD" eventType="valueChanged" id="nt7-eE-Vbv"/>
+                                </connections>
                             </stepper>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fAc-Qb-Kad">
                                 <rect key="frame" x="20" y="610" width="374" height="50"/>
@@ -373,6 +376,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZTq-By-U55"/>
                     <connections>
+                        <outlet property="PriceCostumLBL" destination="j0p-76-kgt" id="vC3-qX-NXF"/>
+                        <outlet property="SrepperAmount" destination="Lqy-Pr-bUw" id="kXR-eN-WWa"/>
                         <outlet property="chooseRose" destination="bNx-JE-rOn" id="0Md-ca-R3w"/>
                     </connections>
                 </viewController>
