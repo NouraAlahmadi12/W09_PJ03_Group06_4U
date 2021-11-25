@@ -52,7 +52,6 @@
 		51300824274B6C65009D9DEC = {
 			isa = PBXGroup;
 			children = (
-				5112BDF5274F5BFF00F81BFF /* CustomOrder.swift */,
 				5130082F274B6C65009D9DEC /* FlowerStore_4U */,
 				5130082E274B6C65009D9DEC /* Products */,
 			);
@@ -71,6 +70,7 @@
 			children = (
 				51300830274B6C65009D9DEC /* AppDelegate.swift */,
 				51300832274B6C65009D9DEC /* SceneDelegate.swift */,
+				5112BDF5274F5BFF00F81BFF /* CustomOrder.swift */,
 				51300834274B6C65009D9DEC /* ViewController.swift */,
 				5130084B274BB919009D9DEC /* ProuductsCell.swift */,
 				51300847274B91BD009D9DEC /* Model.swift */,
