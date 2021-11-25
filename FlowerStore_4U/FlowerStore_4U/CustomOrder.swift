@@ -62,6 +62,14 @@ dismiss(animated: true, completion: nil)
         showPhotoAlert()
     }
     
+    @IBOutlet weak var priceCostomLBL: UILabel!
+    @IBOutlet weak var amountLBL: UILabel!
+    @IBAction func stepperBottun(_ sender: UIStepper) {
+        amountLBL.text = String(sender.value)
+        priceCostomLBL.text = String((sender.value)*5)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
