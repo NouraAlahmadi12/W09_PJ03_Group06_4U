@@ -14,6 +14,8 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
 
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var itemsCollectionView: UICollectionView!
+    
+    
     var items = FlowersList()
     var timer: Timer?
     var currentIndex = 0
