@@ -174,12 +174,13 @@
                     <navigationItem key="navigationItem" id="j61-sE-hyL"/>
                     <connections>
                         <outlet property="BannerCollectionView" destination="5kx-cU-Olg" id="4P9-K9-NWC"/>
+                        <outlet property="bannerCollectionView" destination="5kx-cU-Olg" id="wmM-ht-2NK"/>
                         <outlet property="itemsCollectionView" destination="R3e-MF-YJw" id="KZa-Nz-nzY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1505.7971014492755" y="-893.30357142857133"/>
+            <point key="canvasLocation" x="1259" y="-885"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="Sz7-8f-40J">
@@ -253,12 +254,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2M-Ih-Ktw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2322" y="-1477"/>
+            <point key="canvasLocation" x="1516" y="9"/>
         </scene>
-        <!--View Controller-->
+        <!--Custom Order-->
         <scene sceneID="orj-si-OKN">
             <objects>
-                <viewController id="XPP-ZO-hcD" sceneMemberID="viewController">
+                <viewController id="XPP-ZO-hcD" customClass="CustomOrder" customModule="FlowerStore_4U" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c4G-5B-fKO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -268,6 +269,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="wz3-gk-zku"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="XPP-ZO-hcD" id="ET2-lS-GLb"/>
+                                    <outlet property="delegate" destination="XPP-ZO-hcD" id="9h2-nG-Kdy"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="upload photo (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8P-Nv-Tua">
                                 <rect key="frame" x="20" y="108" width="374" height="27.5"/>
@@ -367,11 +372,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZTq-By-U55"/>
+                    <connections>
+                        <outlet property="chooseRose" destination="bNx-JE-rOn" id="0Md-ca-R3w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8AS-QO-mc1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="sj9-A4-m3a"/>
             </objects>
-            <point key="canvasLocation" x="2322" y="-791"/>
+            <point key="canvasLocation" x="2046" y="-885"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="yue-5Q-jWh">
@@ -412,7 +420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8QR-qx-Mel" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1660.8695652173915" y="-8.0357142857142847"/>
+            <point key="canvasLocation" x="432" y="8"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6f8-ps-3Mx">
@@ -431,7 +439,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNX-5o-svY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197" y="-751"/>
+            <point key="canvasLocation" x="-454" y="-885"/>
         </scene>
         <!--Item-->
         <scene sceneID="d1V-HD-zgo">
@@ -450,7 +458,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CoV-I5-Cpu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="612" y="-8"/>
+            <point key="canvasLocation" x="-455" y="10"/>
         </scene>
         <!--Item-->
         <scene sceneID="oIk-ro-U02">
@@ -469,7 +477,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSJ-c2-l7I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="681" y="-884"/>
+            <point key="canvasLocation" x="432" y="-885"/>
         </scene>
     </scenes>
     <resources>
