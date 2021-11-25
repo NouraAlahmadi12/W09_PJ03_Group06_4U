@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+class ViewController: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var photoBannerArr = [UIImage(named: "Banner1")!,UIImage(named: "Banner2")!,UIImage(named: "Banner3")!]
     
-
+    
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var itemsCollectionView: UICollectionView!
     
@@ -20,13 +20,13 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
     var timer: Timer?
     var currentIndex = 0
     
-
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == bannerCollectionView {
             return photoBannerArr.count
         }else{
-        return items.flowerList.count
+            return items.flowerList.count
         }
     }
     
@@ -34,12 +34,13 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         
         if collectionView == itemsCollectionView{
             let prouductCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProuductID", for: indexPath) as! ProuductsCell
-        
-        prouductCell.imgOfFlower.image = items.flowerList[indexPath.row].flowerImage
-        prouductCell.labelName.text = items.flowerList[indexPath.row].flowerName
-        prouductCell.labelPrice.text = String(items.flowerList[indexPath.row].flowerPrice)
-        prouductCell.imgOfFlower.layer.cornerRadius = 30
-        return prouductCell
+            
+            prouductCell.imgOfFlower.image = items.flowerList[indexPath.row].flowerImage
+            prouductCell.labelName.text = items.flowerList[indexPath.row].flowerName
+            prouductCell.labelPrice.text = String(items.flowerList[indexPath.row].flowerPrice)
+            prouductCell.imgOfFlower.layer.cornerRadius = 30
+            return prouductCell
+            
         }else{
             let bannerCell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerID", for: indexPath) as! PhotoBannerCell
             
@@ -59,12 +60,18 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
             return 1
         }
     }
+    
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(moveToNext), userInfo: nil, repeats: true)
     }
     
     @objc func moveToNext() {
-        currentIndex += 1
+        if currentIndex < photoBannerArr.count - 1 {
+            currentIndex += 1
+        } else {
+            currentIndex = 0
+        }
+        
         bannerCollectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
     }
     
@@ -97,8 +104,9 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         itemsCollectionView.dataSource = self
         bannerCollectionView.dataSource = self
         bannerCollectionView.delegate = self
-    
-//        startTimer()
-    
+
+        startTimer()
+        
     }
 }
+
