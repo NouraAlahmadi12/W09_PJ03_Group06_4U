@@ -13,6 +13,7 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
     var photoBannerArr = [UIImage(named: "Banner1")!,UIImage(named: "Banner2")!,UIImage(named: "Banner3")!]
     
     
+    
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var itemsCollectionView: UICollectionView!
     
@@ -26,13 +27,11 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         bannerCollectionView.dataSource = self
         bannerCollectionView.delegate = self
         
-        
         cleanDB()
         fillDBWithFlowers()
         fetchDataFromDB()
         itemsCollectionView.reloadData()
         bannerCollectionView.reloadData()
-        
     }
     // TODO: Change
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -60,8 +59,14 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
             return bannerCell
         }
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        let vc = (storyboard?.instantiateViewController(withIdentifier: "DetailsViewController")) as! DetailsViewController
+        
+        let showInfo = flower[indexPath.row]
+        vc.DetailsInDetails = showInfo.flowerDetails!
+        vc.priceInDetails = showInfo.flowerPrice
+        vc.imageInDetails = UIImage(named: showInfo.flowerImage ?? "")!
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -95,6 +100,7 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         item2.flowerDetails = "Blue Flowers Height 86 CM Width 24 CM"
         item2.flowerImage = "BlueFlower"
         item2.flowerPrice = 93.51
+        
         
         let item3 = FlowerInfo(context: context)
         item3.flowerName = "Pink Bouqeut"
@@ -138,4 +144,7 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         let clean = NSBatchDeleteRequest(fetchRequest: FlowerInfo.fetchRequest())
         do {try!
             context.execute(clean)} }
+    
 }
+
+
