@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -15,29 +16,40 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var itemsCollectionView: UICollectionView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        startTimer()
+        
+        itemsCollectionView.delegate = self
+        itemsCollectionView.dataSource = self
+        bannerCollectionView.dataSource = self
+        bannerCollectionView.delegate = self
+        
+        
+        cleanDB()
+        fillDBWithFlowers()
+        fetchDataFromDB()
+        itemsCollectionView.reloadData()
+        bannerCollectionView.reloadData()
+        
+    }
+    // TODO: Change
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var items = FlowersList()
+    var flower = [FlowerInfo]()
     var timer: Timer?
     var currentIndex = 0
     
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == bannerCollectionView {
-            return photoBannerArr.count
-        }else{
-            return items.flowerList.count
-        }
-    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {if collectionView == bannerCollectionView {return photoBannerArr.count }else{return flower.count }}
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == itemsCollectionView{
             let prouductCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProuductID", for: indexPath) as! ProuductsCell
-            
-            prouductCell.imgOfFlower.image = items.flowerList[indexPath.row].flowerImage
-            prouductCell.labelName.text = items.flowerList[indexPath.row].flowerName
-            prouductCell.labelPrice.text = String(items.flowerList[indexPath.row].flowerPrice)
+            prouductCell.labelName.text = flower[indexPath.row].flowerName
+            prouductCell.labelPrice.text =  String(flower[indexPath.row].flowerPrice)
+            prouductCell.imgOfFlower.image = UIImage(named: flower[indexPath.row].flowerImage ?? "")
             prouductCell.imgOfFlower.layer.cornerRadius = 30
             return prouductCell
             
@@ -48,22 +60,17 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
             return bannerCell
         }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: bannerCollectionView.frame.width, height: bannerCollectionView.frame.height)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        if collectionView == bannerCollectionView {
-            return 0
-        }else{
-            return 1
-        }
-    }
     
-    func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(moveToNext), userInfo: nil, repeats: true)
-    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {return CGSize(width: bannerCollectionView.frame.width, height: bannerCollectionView.frame.height)}
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {if collectionView == bannerCollectionView {return 0}else{return 1}}
+    
+    func startTimer() {timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(moveToNext), userInfo: nil, repeats: true)}
     
     @objc func moveToNext() {
         if currentIndex < photoBannerArr.count - 1 {
@@ -75,38 +82,60 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         bannerCollectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-        vc.image = items.flowerList[indexPath.row].flowerImage
-        vc.Details = items.flowerList[indexPath.row].flowerDetails ?? "No Details"
-        vc.priceDetails = String(items.flowerList[indexPath.row].flowerPrice)
-        self.navigationController?.pushViewController(vc, animated: true)
+    func fillDBWithFlowers(){
+        
+        let item1 = FlowerInfo(context: context)
+        item1.flowerName = "Orang Bouqeut"
+        item1.flowerDetails = "Orange Flowers with Flowers Height 100 CM Width 50 CM"
+        item1.flowerImage = "OrangeFlower"
+        item1.flowerPrice = 121
+        
+        let item2 = FlowerInfo(context: context)
+        item2.flowerName = "Blue Bouqeut"
+        item2.flowerDetails = "Blue Flowers Height 86 CM Width 24 CM"
+        item2.flowerImage = "BlueFlower"
+        item2.flowerPrice = 93.51
+        
+        let item3 = FlowerInfo(context: context)
+        item3.flowerName = "Pink Bouqeut"
+        item3.flowerDetails = "Pink Flowers Height 57 CM Width 60 CM"
+        item3.flowerImage = "PinkFlower"
+        item3.flowerPrice = 163.40
+        
+        let item4 = FlowerInfo(context: context)
+        item4.flowerName = "Red Bouqeut"
+        item4.flowerDetails = "Red , black and white Flowers with Height 76 CM Width 47 CM"
+        item4.flowerImage = "RedFlower"
+        item4.flowerPrice = 97.23
+        
+        let  item5 = FlowerInfo (context: context)
+        item5.flowerName = "White Bouqeut"
+        item5.flowerDetails = "white Flowers Height 72 CM Width 60 CM"
+        item5.flowerImage = "WhiteFlower"
+        item5.flowerPrice = 224.42
+        
+        let item6 = FlowerInfo(context: context)
+        item6.flowerName = "sun Bouqeut"
+        item6.flowerDetails = "sun Flowers Height 60 CM Width 15 CM"
+        item6.flowerImage = "sunFlower"
+        item6.flowerPrice = 100
+        
+        do{try! context.save()}
+        
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        items.addItem(newItem: FlowersInfo(flowerName: "Orang Bouqeut", flowerDetails: "Orange Flowers with Flowers Height 100 CM Width 50 CM", flowerImage: UIImage(named: "OrangeFlower")!, flowerPrice: 121))
-        
-        items.addItem(newItem: FlowersInfo(flowerName: "Blue Bouqeut", flowerDetails: "Blue Flowers Height 86 CM Width 24 CM", flowerImage: UIImage(named: "BlueFlower")!, flowerPrice: 96))
-        
-        items.addItem(newItem: FlowersInfo(flowerName: "Pink Bouqeut", flowerDetails: "Pink Flowers Height 57 CM Width 60 CM", flowerImage: UIImage(named: "PinkFlower")!, flowerPrice: 162.50))
-        
-        items.addItem(newItem: FlowersInfo(flowerName: "Red Bouqeut", flowerDetails: "Red , black and white Flowers with Height 76 CM Width 47 CM", flowerImage: UIImage(named: "RedFlower")!, flowerPrice: 97.92))
-        
-        items.addItem(newItem: FlowersInfo(flowerName: "White Bouqeut", flowerDetails: "white Flowers Height 72 CM Width 60 CM", flowerImage: UIImage(named: "WhiteFlower")!, flowerPrice: 236.92))
-        
-        
-        items.addItem(newItem: FlowersInfo(flowerName: "sun Bouqeut", flowerDetails: "sun Flowers Height 60 CM Width 15 CM", flowerImage: UIImage(named: "sunFlower")!, flowerPrice: 100))
-        
-        
-        itemsCollectionView.delegate = self
-        itemsCollectionView.dataSource = self
-        bannerCollectionView.dataSource = self
-        bannerCollectionView.delegate = self
-
-        startTimer()
-        
+    func fetchDataFromDB(){
+        let request = FlowerInfo.fetchRequest()
+        do {
+            try!
+            flower = context.fetch(request)
+            itemsCollectionView.reloadData()
+            bannerCollectionView.reloadData()
+        }
     }
+    
+    func cleanDB (){
+        let clean = NSBatchDeleteRequest(fetchRequest: FlowerInfo.fetchRequest())
+        do {try!
+            context.execute(clean)} }
 }
-
