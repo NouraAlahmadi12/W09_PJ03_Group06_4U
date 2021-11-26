@@ -224,15 +224,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSS-0L-ago">
+                                <rect key="frame" x="20" y="420" width="374" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="1kD-Ai-Uz1"/>
+                                    <constraint firstAttribute="width" constant="374" id="jwF-1S-yVZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.21864739759999999" green="0.40433656649999999" blue="0.50616986159999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l7V-qe-Cex"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="QSS-0L-ago" firstAttribute="leading" secondItem="l7V-qe-Cex" secondAttribute="leading" constant="20" id="8E6-c7-M2F"/>
                             <constraint firstItem="l7V-qe-Cex" firstAttribute="trailing" secondItem="PEl-CG-fHg" secondAttribute="trailing" constant="30" id="8IF-Qr-yG0"/>
                             <constraint firstItem="l7V-qe-Cex" firstAttribute="bottom" secondItem="6g5-4m-LyP" secondAttribute="bottom" constant="79" id="8tQ-HI-xtC"/>
                             <constraint firstItem="l7V-qe-Cex" firstAttribute="trailing" secondItem="wp3-4x-Tlf" secondAttribute="trailing" constant="20" id="9Oc-go-dQD"/>
                             <constraint firstItem="l7V-qe-Cex" firstAttribute="trailing" secondItem="2wk-S0-5DQ" secondAttribute="trailing" constant="13" id="F4P-oX-EfH"/>
                             <constraint firstItem="l7V-qe-Cex" firstAttribute="trailing" secondItem="sOB-Xv-aTU" secondAttribute="trailing" constant="20" id="GFW-bn-QQf"/>
+                            <constraint firstItem="2wk-S0-5DQ" firstAttribute="top" secondItem="QSS-0L-ago" secondAttribute="bottom" constant="24" id="HcN-OQ-nS4"/>
                             <constraint firstItem="2wk-S0-5DQ" firstAttribute="top" secondItem="sOB-Xv-aTU" secondAttribute="bottom" constant="24" id="KrB-1z-vC7"/>
                             <constraint firstItem="6g5-4m-LyP" firstAttribute="top" secondItem="wp3-4x-Tlf" secondAttribute="bottom" constant="34" id="Sp5-6t-2CT"/>
                             <constraint firstItem="2wk-S0-5DQ" firstAttribute="leading" secondItem="l7V-qe-Cex" secondAttribute="leading" constant="27" id="TL9-zC-Xl5"/>
@@ -244,6 +257,7 @@
                             <constraint firstItem="PEl-CG-fHg" firstAttribute="top" secondItem="wp3-4x-Tlf" secondAttribute="bottom" constant="29" id="rd1-0w-o1i"/>
                             <constraint firstItem="6g5-4m-LyP" firstAttribute="leading" secondItem="l7V-qe-Cex" secondAttribute="leading" constant="27" id="x3x-jd-tLq"/>
                             <constraint firstItem="PEl-CG-fHg" firstAttribute="leading" secondItem="6g5-4m-LyP" secondAttribute="trailing" constant="77" id="z7q-aR-Q2r"/>
+                            <constraint firstItem="l7V-qe-Cex" firstAttribute="trailing" secondItem="QSS-0L-ago" secondAttribute="trailing" constant="20" id="zAe-hH-TRr"/>
                         </constraints>
                     </view>
                     <connections>
@@ -254,7 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2M-Ih-Ktw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1516" y="9"/>
+            <point key="canvasLocation" x="1515.9420289855075" y="8.7053571428571423"/>
         </scene>
         <!--Custom Order-->
         <scene sceneID="orj-si-OKN">
@@ -281,10 +295,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="qcl-td-byu">
-                                <rect key="frame" x="300" y="488" width="94" height="32"/>
-                                <connections>
-                                    <action selector="StepperBottun:" destination="XPP-ZO-hcD" eventType="valueChanged" id="nt7-eE-Vbv"/>
-                                </connections>
+                                <rect key="frame" x="300" y="510" width="94" height="32"/>
                             </stepper>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fAc-Qb-Kad">
                                 <rect key="frame" x="20" y="647" width="374" height="50"/>
@@ -397,8 +408,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZTq-By-U55"/>
                     <connections>
-                        <outlet property="PriceCostumLBL" destination="j0p-76-kgt" id="vC3-qX-NXF"/>
-                        <outlet property="SrepperAmount" destination="Lqy-Pr-bUw" id="kXR-eN-WWa"/>
                         <outlet property="chooseRose" destination="bNx-JE-rOn" id="0Md-ca-R3w"/>
                         <outlet property="imageFromCL" destination="LUR-L1-baN" id="ISh-sr-U88"/>
                     </connections>

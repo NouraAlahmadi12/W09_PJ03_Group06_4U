@@ -7,20 +7,20 @@
 
 import UIKit
 
-struct FlowersInfo {
-    
-    var flowerName : String
-    var flowerDetails : String?
-    var flowerImage : UIImage
-    var flowerPrice : Double
-    
-}
-
-class FlowersList {
-    
-    var flowerList :[FlowersInfo] = []
-    
-    func addItem (newItem : FlowersInfo) {
-        flowerList.append(newItem)
-    }
-}
+//struct FlowersInfo {
+//
+//    var flowerName : String
+//    var flowerDetails : String?
+//    var flowerImage : UIImage
+//    var flowerPrice : Double
+//
+//}
+//
+//class FlowersList {
+//
+//    var flowerList :[FlowersInfo] = []
+//
+//    func addItem (newItem : FlowersInfo) {
+//        flowerList.append(newItem)
+//    }
+//}

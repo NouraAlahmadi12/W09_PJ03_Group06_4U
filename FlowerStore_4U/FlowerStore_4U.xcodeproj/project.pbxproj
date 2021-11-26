@@ -49,6 +49,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5112BDF9274FB41300F81BFF /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				51300830274B6C65009D9DEC /* AppDelegate.swift */,
+				51300832274B6C65009D9DEC /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		5112BDFA274FB43900F81BFF /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				22FA650E274E25B100A6DE42 /* DetailsViewController.swift */,
+				5112BDF5274F5BFF00F81BFF /* CustomOrder.swift */,
+				51300834274B6C65009D9DEC /* ViewController.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		5112BDFB274FB4C500F81BFF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5130084B274BB919009D9DEC /* ProuductsCell.swift */,
+				A52337EB274D6D2300703312 /* PhotoBannerCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5112BDFC274FB4DE00F81BFF /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				51300836274B6C65009D9DEC /* Main.storyboard */,
+				5130083E274B6C67009D9DEC /* LaunchScreen.storyboard */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
 		51300824274B6C65009D9DEC = {
 			isa = PBXGroup;
 			children = (
@@ -68,17 +105,12 @@
 		5130082F274B6C65009D9DEC /* FlowerStore_4U */ = {
 			isa = PBXGroup;
 			children = (
-				51300830274B6C65009D9DEC /* AppDelegate.swift */,
-				51300832274B6C65009D9DEC /* SceneDelegate.swift */,
-				5112BDF5274F5BFF00F81BFF /* CustomOrder.swift */,
-				51300834274B6C65009D9DEC /* ViewController.swift */,
-				5130084B274BB919009D9DEC /* ProuductsCell.swift */,
+				5112BDF9274FB41300F81BFF /* Delegates */,
+				5112BDFA274FB43900F81BFF /* Class */,
+				5112BDFC274FB4DE00F81BFF /* User Interface */,
+				5112BDFB274FB4C500F81BFF /* Cells */,
 				51300847274B91BD009D9DEC /* Model.swift */,
-				51300836274B6C65009D9DEC /* Main.storyboard */,
-				22FA650E274E25B100A6DE42 /* DetailsViewController.swift */,
-				A52337EB274D6D2300703312 /* PhotoBannerCell.swift */,
 				5130083C274B6C67009D9DEC /* Assets.xcassets */,
-				5130083E274B6C67009D9DEC /* LaunchScreen.storyboard */,
 				51300841274B6C67009D9DEC /* Info.plist */,
 				51300839274B6C65009D9DEC /* FlowerStore_4U.xcdatamodeld */,
 			);

@@ -12,17 +12,21 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var imgDetails: UIImageView!
     @IBOutlet weak var LaDetails: UILabel!
     @IBOutlet weak var priceDt: UILabel!
-    var image = UIImage()
+    
+    
+    var imag = UIImage()
     var Details = ""
     var priceDetails = ""
     @IBAction func buttonCart(_ sender: Any) {
+        
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         LaDetails.text = Details
-        imgDetails.image = image
+        imgDetails.image = imag
         priceDt.text = priceDetails
     }
 }
