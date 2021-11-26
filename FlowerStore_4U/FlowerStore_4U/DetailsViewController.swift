@@ -8,21 +8,28 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-
+    
+    
+    var details = FlowerInfo()
+    
     @IBOutlet weak var imgDetails: UIImageView!
     @IBOutlet weak var LaDetails: UILabel!
     @IBOutlet weak var priceDt: UILabel!
-    var image = UIImage()
-    var Details = ""
-    var priceDetails = ""
+    
+    var imageInDetails = UIImage()
+    var DetailsInDetails = ""
+    var priceInDetails : Double = 0.0
     @IBAction func buttonCart(_ sender: Any) {
+        
+        
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        LaDetails.text = Details
-        imgDetails.image = image
-        priceDt.text = priceDetails
+        
+        LaDetails.text = DetailsInDetails
+        imgDetails.image = imageInDetails
+        priceDt.text = String(priceInDetails)
     }
 }
