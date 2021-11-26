@@ -10,6 +10,9 @@ import UIKit
 class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource, UIImagePickerControllerDelegate & UINavigationControllerDelegate{
     
     let roes = ["jouri roses - Red" , "jouri roses - White" , "jouri roses - Yellow"]
+    var customOrder = [FlowerInfo]()
+    var pickerView = UIPickerView()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -21,6 +24,10 @@ class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSou
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return roes[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        flowerTypeTextField.text = roes[row]
+        flowerTypeTextField.resignFirstResponder()
     }
     
     func showPhotoAlert(){
@@ -56,12 +63,21 @@ dismiss(animated: true, completion: nil)
         dismiss(animated: true, completion: nil)
     }
     
+    func saveUserData() {
+        let item = FlowerInfo (context: context)
+        amountLBL.text = String(item.flowerPrice)
+        imageFromCL.image = UIImage(named: item.flowerImage ?? "")
+        flowerTypeTextField.text = item.flowerName
+        
+        do{try! context.save()}
+    }
+    
     @IBOutlet weak var imageFromCL: UIImageView!
-    @IBOutlet weak var chooseRose: UIPickerView!
     @IBAction func tapOnImage(_ sender: Any) {
         showPhotoAlert()
     }
     
+    @IBOutlet weak var flowerTypeTextField: UITextField!
     @IBOutlet weak var priceCostomLBL: UILabel!
     @IBOutlet weak var amountLBL: UILabel!
     @IBAction func stepperBottun(_ sender: UIStepper) {
@@ -70,17 +86,20 @@ dismiss(animated: true, completion: nil)
     }
     
     
+    @IBAction func addToCartCustomOrder(_ sender: Any) {
+        
+        saveUserData()
+        
+        
+    }
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        chooseRose.dataSource = self
-        chooseRose.delegate = self
-     
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        flowerTypeTextField.inputView = pickerView
+       
     }
-    
-    
 
-    
 }
-
-

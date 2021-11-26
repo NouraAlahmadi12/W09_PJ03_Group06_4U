@@ -17,10 +17,11 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var itemsCollectionView: UICollectionView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startTimer()
+//        startTimer()
         
         itemsCollectionView.delegate = self
         itemsCollectionView.dataSource = self
