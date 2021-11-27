@@ -68,6 +68,7 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         vc.DetailsInDetails = showInfo.flowerDetails!
         vc.priceInDetails = showInfo.flowerPrice
         vc.imageInDetails = UIImage(named: showInfo.flowerImage ?? "")!
+        vc.nameDetails = showInfo.flowerName ?? " "
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

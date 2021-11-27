@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		22FA650F274E25B100A6DE42 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FA650E274E25B100A6DE42 /* DetailsViewController.swift */; };
+		510C784A27521CA300F42DE7 /* Cart-TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510C784927521CA300F42DE7 /* Cart-TableViewController.swift */; };
+		510C784C27521D2D00F42DE7 /* CartTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510C784B27521D2D00F42DE7 /* CartTableCell.swift */; };
 		5112BDF6274F5BFF00F81BFF /* CustomOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5112BDF5274F5BFF00F81BFF /* CustomOrder.swift */; };
 		51300831274B6C65009D9DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51300830274B6C65009D9DEC /* AppDelegate.swift */; };
 		51300833274B6C65009D9DEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51300832274B6C65009D9DEC /* SceneDelegate.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		22FA650E274E25B100A6DE42 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		510C784927521CA300F42DE7 /* Cart-TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cart-TableViewController.swift"; sourceTree = "<group>"; };
+		510C784B27521D2D00F42DE7 /* CartTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableCell.swift; sourceTree = "<group>"; };
 		5112BDF5274F5BFF00F81BFF /* CustomOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOrder.swift; sourceTree = "<group>"; };
 		5130082D274B6C65009D9DEC /* FlowerStore_4U.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerStore_4U.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51300830274B6C65009D9DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 		51300824274B6C65009D9DEC = {
 			isa = PBXGroup;
 			children = (
+				510C784B27521D2D00F42DE7 /* CartTableCell.swift */,
+				510C784927521CA300F42DE7 /* Cart-TableViewController.swift */,
 				5130082F274B6C65009D9DEC /* FlowerStore_4U */,
 				5130082E274B6C65009D9DEC /* Products */,
 			);
@@ -155,8 +161,10 @@
 			files = (
 				51300835274B6C65009D9DEC /* ViewController.swift in Sources */,
 				5112BDF6274F5BFF00F81BFF /* CustomOrder.swift in Sources */,
+				510C784C27521D2D00F42DE7 /* CartTableCell.swift in Sources */,
 				51300831274B6C65009D9DEC /* AppDelegate.swift in Sources */,
 				22FA650F274E25B100A6DE42 /* DetailsViewController.swift in Sources */,
+				510C784A27521CA300F42DE7 /* Cart-TableViewController.swift in Sources */,
 				5130084C274BB919009D9DEC /* ProuductsCell.swift in Sources */,
 				51300833274B6C65009D9DEC /* SceneDelegate.swift in Sources */,
 				A52337EC274D6D2300703312 /* PhotoBannerCell.swift in Sources */,
