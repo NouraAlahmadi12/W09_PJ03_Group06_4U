@@ -12,6 +12,7 @@ class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSou
     let roes = ["jouri roses - Red" , "jouri roses - White" , "jouri roses - Yellow"]
     var customOrder = [FlowerInfo]()
     var pickerView = UIPickerView()
+    var customImageName: String = ""
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -51,25 +52,37 @@ class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSou
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
         guard let imageCL = info[.originalImage] as? UIImage else {
             print("Image not Found")
             return
         }
+        if let imageUrl = info[.imageURL] as? URL {
+            customImageName = imageUrl.lastPathComponent
+        }
         imageFromCL.image = imageCL
     }
-
+    
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
     
     func saveUserData() {
         let item = FlowerInfo (context: context)
-        amountLBL.text = String(item.flowerPrice)
-        imageFromCL.image = UIImage(named: item.flowerImage ?? "")
-        flowerTypeTextField.text = item.flowerName
+        item.flowerPrice = Double(amountLBL.text!) ?? 0.0
+        item.flowerName = flowerTypeTextField.text
+        item.flowerImage = customImageName
         
-        do{try! context.save()}
+        // Its done opposite here
+//        amountLBL.text = String(item.flowerPrice)
+//        imageFromCL.image = UIImage(named: item.flowerImage ?? "")
+//        flowerTypeTextField.text = item.flowerName
+        
+        do{
+            try! context.save()
+            print("Custom data saved to CoreData")
+        }
     }
     
     @IBOutlet weak var imageFromCL: UIImageView!
@@ -87,19 +100,16 @@ dismiss(animated: true, completion: nil)
     
     
     @IBAction func addToCartCustomOrder(_ sender: Any) {
-        
         saveUserData()
-        
-        
     }
   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         pickerView.dataSource = self
         pickerView.delegate = self
         flowerTypeTextField.inputView = pickerView
        
     }
-
+    
 }
