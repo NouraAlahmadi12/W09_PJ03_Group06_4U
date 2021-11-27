@@ -61,24 +61,17 @@ class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSou
             customImageName = imageUrl.lastPathComponent
         }
         imageFromCL.image = imageCL
+        
     }
     
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {dismiss(animated: true, completion: nil)}
     
     func saveUserData() {
         let item = FlowerInfo (context: context)
         item.flowerPrice = Double(amountLBL.text!) ?? 0.0
         item.flowerName = flowerTypeTextField.text
         item.flowerImage = customImageName
-        
-        // Its done opposite here
-//        amountLBL.text = String(item.flowerPrice)
-//        imageFromCL.image = UIImage(named: item.flowerImage ?? "")
-//        flowerTypeTextField.text = item.flowerName
-        
+
         do{
             try! context.save()
             print("Custom data saved to CoreData")

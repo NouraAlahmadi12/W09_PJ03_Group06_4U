@@ -17,6 +17,8 @@
 		5130083D274B6C67009D9DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5130083C274B6C67009D9DEC /* Assets.xcassets */; };
 		51300840274B6C67009D9DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5130083E274B6C67009D9DEC /* LaunchScreen.storyboard */; };
 		5130084C274BB919009D9DEC /* ProuductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130084B274BB919009D9DEC /* ProuductsCell.swift */; };
+		51515F9A2752A94E00ADAB5F /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51515F992752A94E00ADAB5F /* CartCell.swift */; };
+		51515F9E2752ABD000ADAB5F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51515F9D2752ABD000ADAB5F /* CartViewController.swift */; };
 		A52337EC274D6D2300703312 /* PhotoBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52337EB274D6D2300703312 /* PhotoBannerCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		5130083F274B6C67009D9DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51300841274B6C67009D9DEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5130084B274BB919009D9DEC /* ProuductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProuductsCell.swift; sourceTree = "<group>"; };
+		51515F992752A94E00ADAB5F /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		51515F9D2752ABD000ADAB5F /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		A52337EB274D6D2300703312 /* PhotoBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBannerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,10 +72,12 @@
 			children = (
 				51300830274B6C65009D9DEC /* AppDelegate.swift */,
 				51300832274B6C65009D9DEC /* SceneDelegate.swift */,
+				51515F992752A94E00ADAB5F /* CartCell.swift */,
 				5112BDF5274F5BFF00F81BFF /* CustomOrder.swift */,
 				51300834274B6C65009D9DEC /* ViewController.swift */,
 				5130084B274BB919009D9DEC /* ProuductsCell.swift */,
 				51300836274B6C65009D9DEC /* Main.storyboard */,
+				51515F9D2752ABD000ADAB5F /* CartViewController.swift */,
 				22FA650E274E25B100A6DE42 /* DetailsViewController.swift */,
 				A52337EB274D6D2300703312 /* PhotoBannerCell.swift */,
 				5130083C274B6C67009D9DEC /* Assets.xcassets */,
@@ -155,11 +161,13 @@
 			files = (
 				51300835274B6C65009D9DEC /* ViewController.swift in Sources */,
 				5112BDF6274F5BFF00F81BFF /* CustomOrder.swift in Sources */,
+				51515F9E2752ABD000ADAB5F /* CartViewController.swift in Sources */,
 				51300831274B6C65009D9DEC /* AppDelegate.swift in Sources */,
 				22FA650F274E25B100A6DE42 /* DetailsViewController.swift in Sources */,
 				5130084C274BB919009D9DEC /* ProuductsCell.swift in Sources */,
 				51300833274B6C65009D9DEC /* SceneDelegate.swift in Sources */,
 				A52337EC274D6D2300703312 /* PhotoBannerCell.swift in Sources */,
+				51515F9A2752A94E00ADAB5F /* CartCell.swift in Sources */,
 				5130083B274B6C65009D9DEC /* FlowerStore_4U.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
