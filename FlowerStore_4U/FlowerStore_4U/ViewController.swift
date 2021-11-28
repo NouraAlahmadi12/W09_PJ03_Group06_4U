@@ -21,7 +21,7 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startTimer()
+//        startTimer()
         
         itemsCollectionView.delegate = self
         itemsCollectionView.dataSource = self
@@ -65,10 +65,12 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         let vc = (storyboard?.instantiateViewController(withIdentifier: "DetailsViewController")) as! DetailsViewController
         
         let showInfo = flower[indexPath.row]
-        vc.DetailsInDetails = showInfo.flowerDetails!
+        if let details = showInfo.flowerDetails, let image = showInfo.flowerImage, let name = showInfo.flowerName {
+            vc.DetailsInDetails = details
+            vc.imageInDetails = UIImage(named: image)!
+            vc.nameDetails = name
+        }
         vc.priceInDetails = showInfo.flowerPrice
-        vc.imageInDetails = UIImage(named: showInfo.flowerImage ?? "")!
-        vc.nameDetails = showInfo.flowerName ?? " "
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

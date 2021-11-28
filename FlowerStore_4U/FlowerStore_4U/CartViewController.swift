@@ -12,49 +12,51 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var cartItemTableView: UITableView!
     
-    var cartOrder = [FlowerInfo]()
+    var cartOrder = [CartInfo]()
+    var addToCart = [FlowerInfo]()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {return cartOrder.count}
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cartOrder.count
+        
+    }
+    
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = cartItemTableView.dequeueReusableCell(withIdentifier: "cartCellID") as! CartTableCell
-        
-        cell.nameInCart.text = cartOrder[indexPath.row].flowerName
-        cell.priceInCart.text = String(cartOrder[indexPath.row].flowerPrice)
-        cell.imageInCart.image = UIImage(named:cartOrder[indexPath.row].flowerImage ?? " ")
+        let save = cartOrder[indexPath.row]
+        cell.nameInCart.text = save.flowerNameInCart
+        cell.priceInCart.text = String(save.flowerPriceInCart)
+        cell.imageInCart.image = UIImage(named: save.flowerImageInCart ?? " ")
         return cell
     }
     
     @IBAction func deleteAll(_ sender: Any) {
-        cartOrder.removeAll()
-        do {
-            for _ in 0...10 {
-                if let item = cartOrder.last {
-                    context.delete(item)
-                }
-                try!
-                context.save()
-                fetchDataFromDB()
-            }
+        for item in cartOrder {
+            context.delete(item)
         }
+        do {
+            try! context.save()
+        }
+        fetchDataFromDB()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cartItemTableView.delegate = self
         cartItemTableView.dataSource = self
         fetchDataFromDB()
-        
-       
     }
     
     override func viewWillAppear(_ animated: Bool){
         fetchDataFromDB()
+        cartItemTableView.reloadData()
     }
     func fetchDataFromDB(){
-        let request = FlowerInfo.fetchRequest()
+        
+        let request = CartInfo.fetchRequest()
         do {
             try!
             cartOrder = context.fetch(request)

@@ -21,21 +21,25 @@ class DetailsViewController: UIViewController {
     var DetailsInDetails = ""
     var priceInDetails : Double = 0.0
     var nameDetails : String = ""
+    
     @IBAction func buttonCart(_ sender: Any) {
-        let newItems = FlowerInfo(context: context)
-//        String(imgDetails.image) = newItems.flowerImage
-        nameDetails = newItems.flowerName ?? " "
-        priceInDetails = newItems.flowerPrice
-        
-        
+     saveUserData()
     }
+    
     func saveUserData() {
         let item = FlowerInfo (context: context)
-        priceDt.text = String(item.flowerPrice)
-        imgDetails.image = UIImage(named: item.flowerImage ?? "")
-        nameInDetails.text = item.flowerName
+        item.flowerName = nameDetails
+        item.flowerPrice = Double(priceDt.text!) ?? 0.0
+//        item.flowerImage = imageInDetails
 
+        
+        let saveToCart = CartInfo(context: context)
+        saveToCart.flowerNameInCart = item.flowerName
+        saveToCart.flowerPriceInCart = item.flowerPrice
+        saveToCart.flowerImageInCart = item.flowerImage
+        
         do{try! context.save()}
+        
     }
 
     
@@ -47,4 +51,6 @@ class DetailsViewController: UIViewController {
         nameInDetails.text = nameDetails
         priceDt.text = String(priceInDetails)
     }
+    
+   
 }

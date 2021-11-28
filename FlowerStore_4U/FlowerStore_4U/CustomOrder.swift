@@ -71,7 +71,11 @@ class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSou
         item.flowerPrice = Double(amountLBL.text!) ?? 0.0
         item.flowerName = flowerTypeTextField.text
         item.flowerImage = customImageName
-
+        
+        let saveToCart = CartInfo(context: context)
+        saveToCart.flowerNameInCart = item.flowerName
+        saveToCart.flowerPriceInCart = item.flowerPrice
+        saveToCart.flowerImageInCart = item.flowerImage
         do{
             try! context.save()
             print("Custom data saved to CoreData")
@@ -98,6 +102,7 @@ class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSou
     
     @IBAction func addToCartCustomOrder(_ sender: Any) {
         saveUserData()
+    
     }
   
     override func viewDidLoad() {
@@ -109,5 +114,4 @@ class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSou
         
        
     }
-    
 }

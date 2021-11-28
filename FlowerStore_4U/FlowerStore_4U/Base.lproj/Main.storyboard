@@ -6,7 +6,6 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -137,37 +136,19 @@
                                     <segue destination="XPP-ZO-hcD" kind="show" id="vJa-n3-ORe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uxg-zV-ZfE">
-                                <rect key="frame" x="10" y="231" width="23" height="32"/>
-                                <color key="tintColor" red="0.17558881640434265" green="0.5139203667640686" blue="0.64694762229919434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <menu key="menu" id="RYz-Yc-vDD">
-                                    <children>
-                                        <command title="Item 1" id="3k6-ZY-lo3"/>
-                                        <command title="Item 2" id="5oH-7Q-j42"/>
-                                    </children>
-                                </menu>
-                                <state key="normal" image="arrow.up.arrow.down" catalog="system">
-                                    <color key="titleColor" red="0.17558881640434265" green="0.5139203667640686" blue="0.64694762229919434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="R3e-MF-YJw" firstAttribute="top" secondItem="Uxg-zV-ZfE" secondAttribute="bottom" constant="7" id="3Ql-Gf-c5A"/>
                             <constraint firstAttribute="bottom" secondItem="R3e-MF-YJw" secondAttribute="bottom" constant="77" id="DM2-Wg-iVW"/>
                             <constraint firstItem="HS5-4T-AUy" firstAttribute="top" secondItem="5kx-cU-Olg" secondAttribute="bottom" constant="3" id="FVm-fr-yT6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HS5-4T-AUy" secondAttribute="trailing" constant="20" id="HEF-TD-38L"/>
                             <constraint firstItem="5kx-cU-Olg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="40" id="KX1-5j-ev3"/>
                             <constraint firstItem="R3e-MF-YJw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VSF-28-VIa"/>
                             <constraint firstItem="5kx-cU-Olg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VcW-tD-dFf"/>
-                            <constraint firstItem="HS5-4T-AUy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Uxg-zV-ZfE" secondAttribute="trailing" constant="8" symbolic="YES" id="e7m-Xn-Wru"/>
                             <constraint firstItem="5kx-cU-Olg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mBO-Mq-v90"/>
                             <constraint firstItem="R3e-MF-YJw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="tcX-BD-SAq"/>
-                            <constraint firstItem="Uxg-zV-ZfE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="uW7-C2-Dta"/>
-                            <constraint firstItem="Uxg-zV-ZfE" firstAttribute="top" secondItem="5kx-cU-Olg" secondAttribute="bottom" constant="3" id="y8O-LM-bqp"/>
                             <constraint firstItem="R3e-MF-YJw" firstAttribute="top" secondItem="HS5-4T-AUy" secondAttribute="bottom" constant="8" symbolic="YES" id="yc1-y5-pPH"/>
-                            <constraint firstItem="R3e-MF-YJw" firstAttribute="top" secondItem="Uxg-zV-ZfE" secondAttribute="bottom" constant="7" id="zQp-7h-Ovj"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="costumAdd" id="VSr-CO-wxf"/>
@@ -281,7 +262,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload photo (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8P-Nv-Tua">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload photo " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8P-Nv-Tua">
                                 <rect key="frame" x="20" y="117" width="374" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" red="0.17558881640434265" green="0.5139203667640686" blue="0.64694762229919434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -372,6 +353,7 @@
                                 <rect key="frame" x="20" y="510" width="251" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqy-Pr-bUw">
@@ -605,7 +587,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="cart.fill.badge.plus" catalog="system" width="128" height="106"/>
         <image name="costumAdd" width="40" height="40"/>
