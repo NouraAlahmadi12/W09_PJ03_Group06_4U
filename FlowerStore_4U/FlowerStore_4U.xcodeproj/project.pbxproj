@@ -19,6 +19,10 @@
 		5130084C274BB919009D9DEC /* ProuductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130084B274BB919009D9DEC /* ProuductsCell.swift */; };
 		51515F9A2752A94E00ADAB5F /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51515F992752A94E00ADAB5F /* CartCell.swift */; };
 		51515F9E2752ABD000ADAB5F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51515F9D2752ABD000ADAB5F /* CartViewController.swift */; };
+		51E852512753912000747692 /* CartInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E8524D2753912000747692 /* CartInfo+CoreDataClass.swift */; };
+		51E852522753912000747692 /* CartInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E8524E2753912000747692 /* CartInfo+CoreDataProperties.swift */; };
+		51E852532753912000747692 /* FlowerInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E8524F2753912000747692 /* FlowerInfo+CoreDataClass.swift */; };
+		51E852542753912000747692 /* FlowerInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E852502753912000747692 /* FlowerInfo+CoreDataProperties.swift */; };
 		A52337EC274D6D2300703312 /* PhotoBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52337EB274D6D2300703312 /* PhotoBannerCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,10 @@
 		5130084B274BB919009D9DEC /* ProuductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProuductsCell.swift; sourceTree = "<group>"; };
 		51515F992752A94E00ADAB5F /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		51515F9D2752ABD000ADAB5F /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		51E8524D2753912000747692 /* CartInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CartInfo+CoreDataClass.swift"; path = "FlowerStore_4U/CartInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		51E8524E2753912000747692 /* CartInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CartInfo+CoreDataProperties.swift"; path = "FlowerStore_4U/CartInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		51E8524F2753912000747692 /* FlowerInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FlowerInfo+CoreDataClass.swift"; path = "FlowerStore_4U/FlowerInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		51E852502753912000747692 /* FlowerInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FlowerInfo+CoreDataProperties.swift"; path = "FlowerStore_4U/FlowerInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A52337EB274D6D2300703312 /* PhotoBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBannerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +62,10 @@
 		51300824274B6C65009D9DEC = {
 			isa = PBXGroup;
 			children = (
+				51E8524D2753912000747692 /* CartInfo+CoreDataClass.swift */,
+				51E8524E2753912000747692 /* CartInfo+CoreDataProperties.swift */,
+				51E8524F2753912000747692 /* FlowerInfo+CoreDataClass.swift */,
+				51E852502753912000747692 /* FlowerInfo+CoreDataProperties.swift */,
 				5130082F274B6C65009D9DEC /* FlowerStore_4U */,
 				5130082E274B6C65009D9DEC /* Products */,
 			);
@@ -161,6 +173,9 @@
 			files = (
 				51300835274B6C65009D9DEC /* ViewController.swift in Sources */,
 				5112BDF6274F5BFF00F81BFF /* CustomOrder.swift in Sources */,
+				51E852512753912000747692 /* CartInfo+CoreDataClass.swift in Sources */,
+				51E852532753912000747692 /* FlowerInfo+CoreDataClass.swift in Sources */,
+				51E852522753912000747692 /* CartInfo+CoreDataProperties.swift in Sources */,
 				51515F9E2752ABD000ADAB5F /* CartViewController.swift in Sources */,
 				51300831274B6C65009D9DEC /* AppDelegate.swift in Sources */,
 				22FA650F274E25B100A6DE42 /* DetailsViewController.swift in Sources */,
@@ -168,6 +183,7 @@
 				51300833274B6C65009D9DEC /* SceneDelegate.swift in Sources */,
 				A52337EC274D6D2300703312 /* PhotoBannerCell.swift in Sources */,
 				51515F9A2752A94E00ADAB5F /* CartCell.swift in Sources */,
+				51E852542753912000747692 /* FlowerInfo+CoreDataProperties.swift in Sources */,
 				5130083B274B6C65009D9DEC /* FlowerStore_4U.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

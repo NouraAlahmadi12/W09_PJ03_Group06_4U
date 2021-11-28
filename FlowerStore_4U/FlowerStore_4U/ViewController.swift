@@ -49,7 +49,7 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
             let prouductCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProuductID", for: indexPath) as! ProuductsCell
             prouductCell.labelName.text = flower[indexPath.row].flowerName
             prouductCell.labelPrice.text =  String(flower[indexPath.row].flowerPrice)
-            prouductCell.imgOfFlower.image = UIImage(named: flower[indexPath.row].flowerImage ?? "")
+            prouductCell.imgOfFlower.image = flower[indexPath.row].flowerImage
             prouductCell.imgOfFlower.layer.cornerRadius = 30
             return prouductCell
             
@@ -67,7 +67,7 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         let showInfo = flower[indexPath.row]
         if let details = showInfo.flowerDetails, let image = showInfo.flowerImage, let name = showInfo.flowerName {
             vc.DetailsInDetails = details
-            vc.imageInDetails = UIImage(named: image)!
+            vc.imageInDetails = image
             vc.nameDetails = name
         }
         vc.priceInDetails = showInfo.flowerPrice
@@ -96,38 +96,38 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         let item1 = FlowerInfo(context: context)
         item1.flowerName = "Orang Bouqeut"
         item1.flowerDetails = "Orange Flowers with Flowers Height 100 CM Width 50 CM"
-        item1.flowerImage = "OrangeFlower"
+        item1.flowerImage = UIImage(named: "OrangeFlower")
         item1.flowerPrice = 121
         
         let item2 = FlowerInfo(context: context)
         item2.flowerName = "Blue Bouqeut"
         item2.flowerDetails = "Blue Flowers Height 86 CM Width 24 CM"
-        item2.flowerImage = "BlueFlower"
+        item2.flowerImage = UIImage(named: "BlueFlower")
         item2.flowerPrice = 93.51
         
         
         let item3 = FlowerInfo(context: context)
         item3.flowerName = "Pink Bouqeut"
         item3.flowerDetails = "Pink Flowers Height 57 CM Width 60 CM"
-        item3.flowerImage = "PinkFlower"
+        item3.flowerImage = UIImage(named: "PinkFlower")
         item3.flowerPrice = 163.40
         
         let item4 = FlowerInfo(context: context)
         item4.flowerName = "Red Bouqeut"
         item4.flowerDetails = "Red , black and white Flowers with Height 76 CM Width 47 CM"
-        item4.flowerImage = "RedFlower"
+        item4.flowerImage = UIImage(named: "RedFlower")
         item4.flowerPrice = 97.23
         
         let  item5 = FlowerInfo (context: context)
         item5.flowerName = "White Bouqeut"
         item5.flowerDetails = "white Flowers Height 72 CM Width 60 CM"
-        item5.flowerImage = "WhiteFlower"
+        item5.flowerImage = UIImage(named: "WhiteFlower")
         item5.flowerPrice = 224.42
         
         let item6 = FlowerInfo(context: context)
         item6.flowerName = "sun Bouqeut"
         item6.flowerDetails = "sun Flowers Height 60 CM Width 15 CM"
-        item6.flowerImage = "sunFlower"
+        item6.flowerImage = UIImage(named: "sunFlower")
         item6.flowerPrice = 100
         
         do{try! context.save()}

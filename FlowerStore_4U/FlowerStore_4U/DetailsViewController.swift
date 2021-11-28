@@ -30,7 +30,7 @@ class DetailsViewController: UIViewController {
         let item = FlowerInfo (context: context)
         item.flowerName = nameDetails
         item.flowerPrice = Double(priceDt.text!) ?? 0.0
-//        item.flowerImage = imageInDetails
+        item.flowerImage = imageInDetails
 
         
         let saveToCart = CartInfo(context: context)
