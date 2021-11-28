@@ -21,7 +21,7 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        startTimer()
+        startTimer()
         
         itemsCollectionView.delegate = self
         itemsCollectionView.dataSource = self

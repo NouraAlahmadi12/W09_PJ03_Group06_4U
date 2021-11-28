@@ -43,12 +43,11 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         cartItemTableView.delegate = self
         cartItemTableView.dataSource = self
         fetchDataFromDB()
-        cleanDB()
-        super.viewDidLoad()
+        
+       
     }
     
     override func viewWillAppear(_ animated: Bool){
@@ -81,13 +80,4 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         return UISwipeActionsConfiguration (actions: [actionDelete])
     }
-    
-    func cleanDB (){
-        let clean = NSBatchDeleteRequest(fetchRequest: FlowerInfo.fetchRequest())
-        do {try!
-            context.execute(clean)} }
-    
 }
-
-
-//NSBatchDeleteRequest(fetchRequest: cartOrder.fetchRequest())

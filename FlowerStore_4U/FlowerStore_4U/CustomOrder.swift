@@ -83,6 +83,10 @@ class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSou
         showPhotoAlert()
     }
     
+    
+    @IBOutlet weak var clickOnPhoto: UILabel!
+    
+   
     @IBOutlet weak var flowerTypeTextField: UITextField!
     @IBOutlet weak var priceCostomLBL: UILabel!
     @IBOutlet weak var amountLBL: UILabel!
@@ -102,6 +106,7 @@ class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSou
         pickerView.dataSource = self
         pickerView.delegate = self
         flowerTypeTextField.inputView = pickerView
+        
        
     }
     
