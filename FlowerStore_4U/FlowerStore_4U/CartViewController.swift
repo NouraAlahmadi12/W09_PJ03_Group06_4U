@@ -29,7 +29,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         let save = cartOrder[indexPath.row]
         cell.nameInCart.text = save.flowerNameInCart
         cell.priceInCart.text = String(save.flowerPriceInCart)
-        cell.imageInCart.image = UIImage(named: save.flowerImageInCart ?? " ")
+        cell.imageInCart.image = save.flowerImageInCart
         return cell
     }
     

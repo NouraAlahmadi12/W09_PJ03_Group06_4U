@@ -12,7 +12,7 @@ class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSou
     let roes = ["jouri roses - Red" , "jouri roses - White" , "jouri roses - Yellow"]
     var customOrder = [FlowerInfo]()
     var pickerView = UIPickerView()
-    var customImageName: String = ""
+    var customImage: UIImage?
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -57,8 +57,8 @@ class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSou
             print("Image not Found")
             return
         }
-        if let imageUrl = info[.imageURL] as? URL {
-            customImageName = imageUrl.lastPathComponent
+        if let imageUrl = info[.originalImage] as? UIImage {
+            customImage = imageUrl
         }
         imageFromCL.image = imageCL
         
@@ -70,7 +70,7 @@ class CustomOrder: UIViewController , UIPickerViewDelegate , UIPickerViewDataSou
         let item = FlowerInfo (context: context)
         item.flowerPrice = Double(amountLBL.text!) ?? 0.0
         item.flowerName = flowerTypeTextField.text
-        item.flowerImage = customImageName
+        item.flowerImage = customImage
         
         let saveToCart = CartInfo(context: context)
         saveToCart.flowerNameInCart = item.flowerName
